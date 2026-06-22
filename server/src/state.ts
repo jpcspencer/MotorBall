@@ -1,11 +1,20 @@
 import { MapSchema, Schema, defineTypes } from '@colyseus/schema'
 
 export class PlayerState extends Schema {
-  x = 0
-  y = 0
-  rotation = 0
-  vx = 0
-  vy = 0
+  declare x: number
+  declare y: number
+  declare rotation: number
+  declare vx: number
+  declare vy: number
+
+  constructor() {
+    super()
+    this.x = 0
+    this.y = 0
+    this.rotation = 0
+    this.vx = 0
+    this.vy = 0
+  }
 }
 
 defineTypes(PlayerState, {
@@ -17,7 +26,12 @@ defineTypes(PlayerState, {
 })
 
 export class ArenaState extends Schema {
-  players = new MapSchema<PlayerState>()
+  declare players: MapSchema<PlayerState>
+
+  constructor() {
+    super()
+    this.players = new MapSchema<PlayerState>()
+  }
 }
 
 defineTypes(ArenaState, {

@@ -52,8 +52,8 @@ class RemoteSkater {
 }
 
 class ArenaScene extends Phaser.Scene {
-  private cursors!: Phaser.Types.Input.Keyboard.CursorKeys
-  private keys!: Record<'w' | 'a' | 'd', Phaser.Input.Keyboard.Key>
+  private cursors?: Phaser.Types.Input.Keyboard.CursorKeys
+  private keys?: Record<'w' | 'a' | 'd', Phaser.Input.Keyboard.Key>
   private localSprite!: Phaser.GameObjects.Graphics
   private localId = ''
   private localState: PlayerStateMessage = { x: -720, y: 0, rotation: 0, vx: 0, vy: 0 }
@@ -71,11 +71,12 @@ class ArenaScene extends Phaser.Scene {
 
     this.drawArena()
 
-    this.cursors = this.input.keyboard!.createCursorKeys()
-    this.keys = this.input.keyboard!.addKeys('W,A,D') as Record<
-      'w' | 'a' | 'd',
-      Phaser.Input.Keyboard.Key
-    >
+    this.cursors = this.input.keyboard?.createCursorKeys()
+    this.keys = this.input.keyboard?.addKeys({
+      w: Phaser.Input.Keyboard.KeyCodes.W,
+      a: Phaser.Input.Keyboard.KeyCodes.A,
+      d: Phaser.Input.Keyboard.KeyCodes.D,
+    }) as Record<'w' | 'a' | 'd', Phaser.Input.Keyboard.Key> | undefined
 
     this.localSprite = createSkaterSprite(this, 0x35d0ff, 0x101218)
     this.localSprite.setPosition(this.localState.x, this.localState.y)
@@ -155,6 +156,10 @@ class ArenaScene extends Phaser.Scene {
   }
 
   private updateLocalPlayer(delta: number) {
+    if (!this.keys || !this.cursors) {
+      return
+    }
+
     const turningLeft = this.keys.a.isDown || this.cursors.left.isDown
     const turningRight = this.keys.d.isDown || this.cursors.right.isDown
 

@@ -16,7 +16,7 @@ const SPAWNS = [
   { x: 0, y: 390, rotation: -Math.PI / 2 },
 ]
 
-export class ArenaRoom extends Room<{ state: ArenaState }> {
+export class ArenaRoom extends Room<ArenaState> {
   maxClients = 12
 
   onCreate() {

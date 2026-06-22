@@ -12,9 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@colyseus/schema": "^4.0.26",
-    "@colyseus/ws-transport": "^0.17.13",
-    "colyseus": "^0.17.10"
+    "@colyseus/schema": "^3.0.76",
+    "@colyseus/ws-transport": "^0.16.5",
+    "colyseus": "^0.16.5"
   },
   "devDependencies": {
     "@types/node": "^26.0.0",
