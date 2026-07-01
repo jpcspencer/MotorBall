@@ -12,9 +12,9 @@ it loose from you.
  
 ---
  
-## The idea (loosely held)
+## The idea
  
-The feeling I'm chasing: **speed + contact, both happening at once.** You're
+**Speed + contact, both happening at once.** You're
 always moving, and the fight happens *while* you move — grab the ball, carry it,
 and everyone else is allowed to hit you to take it.
  
@@ -107,17 +107,6 @@ Each step is meant to be a small, self-contained session — no big-bang builds.
 - [ ] **vNext — Identity pass:** art direction, sound, the grime — the look that
       makes a 10-second clip pop
 - [ ] **Someday:** lock the real name, decide 2D-forever vs. 3D glow-up
----
- 
-## Notes to self
- 
-- **The clip is the product.** A 10-second moment — a bodycheck that pops the
-  ball loose, a collision at speed — is the thing worth recording and posting.
-  Build toward moments that read instantly.
-- **Art = direction, not generation.** Whatever assets get used, coherence is
-  the whole game. One deliberate world beats fifteen mismatched styles.
-- **Keep it joyful.** This is the downtime build. The day it starts feeling like
-  an obligation, step back — it's allowed to just be fun.
 ---
  
 ## License
